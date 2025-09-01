@@ -1,6 +1,6 @@
 import turtle
 
-wn = turtle.screen()
+wn = turtle.Screen()
 wn.title('ping by joshua')
 wn.bgcolor('black')
 wn,setup(width=800, height=600)
@@ -35,22 +35,22 @@ ball.dy = -2
 
 
 # Function
-def racket_one_up()
+def racket_one_up():
     y = racket_one.ycor()
     y += 20
     racket_one.sety(y)
 
-def racket_one_down()
+def racket_one_down():
     y = racket_one.ycor()
     y -= 20
     racket_one.sety(y)
 
-def racket_two_up()
+def racket_two_up():
     y = racket_two.ycor()
     y += 20
     racket_two.sety(y)
 
-def racket_two_down()
+def racket_two_down():
     y = racket_.ycor()
     y -= 20
     racket_two.sety(y)
@@ -62,13 +62,13 @@ wn.onkeypress(racket_one_down, 's')
 wn.onkeypress(racket_two_up, 'Up')
 wn.onkeypress(racket_two_down, 'Down')
 
-# Main game loop
+ # Main game loop
 while True:
     wn.update()
-
+    
     # move ball
-    ball.setx(ball.xcor + ball.dx)
-    ball.setx(ball.ycor + ball.dy)
+    ball.setx(ball.xcor() + ball.dx)
+    ball.sety(ball.ycor() + ball.dy)
 
     if ball.ycor() > 290:
         ball.sety(290)
@@ -87,4 +87,3 @@ while True:
         ball.goto(0, 0)
         ball.dx *= -1
 
- 
